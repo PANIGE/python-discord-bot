@@ -1,0 +1,2 @@
+class IgnoredException(Exception):
+    pass
