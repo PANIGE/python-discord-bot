@@ -1,7 +1,6 @@
 import os
 from constants.exceptions import IgnoredException
 from helpers import console
-from helpers.deepLearnHelper import predicter
 from objects import Context
 from Bot import bot
 
@@ -54,7 +53,8 @@ if __name__ == "__main__":
             raise
 
         try:
-            console.write("> Loading IA ", True)
+            console.write("> Loading IA... ", True)
+            from helpers.deepLearnHelper import predicter
             Context.Predicter = predicter(os.path.join(os.getcwd(), ".data", "model.hdf5"))
             console.writeSuccess()
         except:

@@ -1,0 +1,10 @@
+Représente un entier signé 64 bits.
+```cs
+public readonly struct Int64 : IComparable, IComparable<long>, IConvertible, IEquatable<long>, ISpanFormattable
+```
+Héritage **Object** -> Int64
+
+
+**__Remarques__**
+
+Int64 est un type valeur immuable qui représente des entiers signés avec des valeurs comprises entre 9 223 372 036 854 775 808 (représenté par la constante) à 9 223 372 036 854 775 807 (représenté par la Int64.MinValue Int64.MaxValue constante). Le .NET Framework inclut également un type de valeur entière 64 bits non signé, UInt64qui représente des valeurs comprises entre 0 et 18 446 744 073 709 551 615.

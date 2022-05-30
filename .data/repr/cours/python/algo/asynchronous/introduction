@@ -1,0 +1,11 @@
+Explanation of the **__Asyncronous Programming__**
+
+Asynchronous Programming is based around the concept of jumping from one task to another.
+
+This is useful for example in the context of a Web server or database handle.
+
+Retrieving data from the DB or requesting a resource from a server requires time, and especially waiting the third party (SQL server, or other Web server).
+
+Asynchronous therefore makes it possible to **await** these resources without blocking the server, or the program. it will be able to do something else besides, within the framework of a web server, Take care of another request.
+Or in a game display a loading screen while waiting for all the data to be loaded,
+This is called concurency.

@@ -1,0 +1,16 @@
+Représente un entier signé 16 bits.
+```cs
+public readonly struct Int16 : IComparable, IComparable<short>, IConvertible, IEquatable<short>, ISpanFormattable
+```
+Héritage **Object** -> Int16
+
+
+**__Remarques__**
+
+Le Int16 type valeur représente des entiers signés avec des valeurs comprises entre 32768 et positif 32767.
+
+Ce type fournit des méthodes pour convertir la valeur d’une instance de ce type en sa représentation sous forme de chaîne, pour convertir la représentation sous forme de chaîne d’un nombre en instance de ce type et pour comparer les instances de ce type.
+
+Vous pouvez également appeler les membres de la Math classe pour effectuer un large éventail d’opérations numériques, notamment obtenir la valeur absolue d’un nombre, calculer le quotient et le reste de la division intégrale, déterminer la valeur maximale ou minimale de deux entiers, obtenir le signe d’un nombre et arrondir un nombre.
+
+Pour plus d’informations sur la façon dont les codes de spécification de format contrôlent la représentation sous forme de chaîne des types valeur, consultez Mise en forme des types.

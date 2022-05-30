@@ -1,0 +1,11 @@
+Représente un entier signé 32 bits.
+```cs
+[System.CLSCompliant(false)]
+public readonly struct Int32 : IComparable, IComparable<int>, IConvertible, IEquatable<int>, ISpanFormattable
+```
+Héritage **Object** -> Int32
+
+
+**__Remarques__**
+
+Int32 est un type valeur immuable qui représente des entiers signés avec des valeurs comprises entre 2 147 483 648 (qui est représenté par la Int32.MinValue constante) à 2 147 483 647 positifs (représenté par la Int32.MaxValue constante). .NET inclut également un type de valeur entière 32 bits non signé, UInt32qui représente des valeurs comprises entre 0 et 4 294 967 295.

@@ -2,7 +2,6 @@ import datetime
 import time
 from enum import Enum
 from random import randint, choice
-from typing import Final
 import urllib.parse
 import aiohttp
 import discord
@@ -12,9 +11,9 @@ from objects import Context
 # General is a cog found on the internet
 
 class RPS(Enum):
-    rock = "\N{MOYAI}"
-    paper = "\N{PAGE FACING UP}"
-    scissors = "\N{BLACK SCISSORS}\N{VARIATION SELECTOR-16}"
+    rock = "🪨"
+    paper = "📄"
+    scissors = "✂️"
 
 
 class RPSParser:
@@ -30,7 +29,7 @@ class RPSParser:
             self.choice = None
 
 
-MAX_ROLL: Final[int] = 2 ** 64 - 1
+MAX_ROLL = 2 ** 64 - 1
 
 
 class General(commands.Cog):
@@ -287,16 +286,16 @@ class General(commands.Cog):
             online_stats = {
                 _("Humans: "): lambda x: not x.bot,
                 _(" • Bots: "): lambda x: x.bot,
-                "\N{LARGE GREEN CIRCLE}": lambda x: x.status is discord.Status.online,
-                "\N{LARGE ORANGE CIRCLE}": lambda x: x.status is discord.Status.idle,
-                "\N{LARGE RED CIRCLE}": lambda x: x.status is discord.Status.dnd,
-                "\N{MEDIUM WHITE CIRCLE}\N{VARIATION SELECTOR-16}": lambda x: (
+                "🟢": lambda x: x.status is discord.Status.online,
+                "🟠": lambda x: x.status is discord.Status.idle,
+                "🔴": lambda x: x.status is discord.Status.dnd,
+                "⚫": lambda x: (
                     x.status is discord.Status.offline
                 ),
-                "\N{LARGE PURPLE CIRCLE}": lambda x: any(
+                "🟣": lambda x: any(
                     a.type is discord.ActivityType.streaming for a in x.activities
                 ),
-                "\N{MOBILE PHONE}": lambda x: x.is_on_mobile(),
+                "📱": lambda x: x.is_on_mobile(),
             }
             member_msg = _("Users online: **{online}/{total_users}**\n").format(
                 online=online, total_users=total_users
@@ -343,7 +342,7 @@ class General(commands.Cog):
                 "WELCOME_SCREEN_ENABLED": _("Welcome Screen enabled"),
             }
             guild_features_list = [
-                f"\N{WHITE HEAVY CHECK MARK} {name}"
+                f"✅ {name}"
                 for feature, name in features.items()
                 if feature in guild.features
             ]
@@ -373,8 +372,8 @@ class General(commands.Cog):
             data.add_field(
                 name=_("Channels:"),
                 value=_(
-                    "\N{SPEECH BALLOON} Text: {text}\n"
-                    "\N{SPEAKER WITH THREE SOUND WAVES} Voice: {voice}"
+                    "🗨️ Text: {text}\n"
+                    "🎙️ Voice: {voice}"
                 ).format(text=_(text_channels), voice=_(voice_channels)),
             )
             data.add_field(
@@ -619,15 +618,15 @@ class General(commands.Cog):
             joined_on = _("Unknown")
 
         if any(a.type is discord.ActivityType.streaming for a in member.activities):
-            statusemoji = "\N{LARGE PURPLE CIRCLE}"
+            statusemoji = "🟣"
         elif member.status.name == "online":
-            statusemoji = "\N{LARGE GREEN CIRCLE}"
+            statusemoji = "🟢"
         elif member.status.name == "offline":
-            statusemoji = "\N{MEDIUM WHITE CIRCLE}\N{VARIATION SELECTOR-16}"
+            statusemoji = "⚫"
         elif member.status.name == "dnd":
-            statusemoji = "\N{LARGE RED CIRCLE}"
+            statusemoji = "🔴"
         elif member.status.name == "idle":
-            statusemoji = "\N{LARGE ORANGE CIRCLE}"
+            statusemoji = "🟠"
         activity = _("Chilling in {} status").format(member.status)
         status_string = self.get_status_string(member)
 

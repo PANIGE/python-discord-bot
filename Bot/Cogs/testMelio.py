@@ -2,7 +2,7 @@ from objects import Context
 from discord.ext import commands
 import discord
 
-class Handler(commands.Cog):
+class LoupGarou(commands.Cog):
     def __init__(self):
         self.bot = Context.Bot
         self._last_member = None
@@ -18,4 +18,4 @@ class Handler(commands.Cog):
         self._last_member = member
 
 
-Context.Bot.add_cog(Handler())
+Context.Bot.add_cog(LoupGarou())

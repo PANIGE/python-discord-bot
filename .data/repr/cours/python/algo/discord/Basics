@@ -1,0 +1,37 @@
+**__How to Make a Discord Bot in Python__**
+
+Since you’re learning how to make a Discord bot with Python, you’ll be using `discord.py`.
+
+discord.py is a Python library that exhaustively implements Discord’s APIs in an efficient and Pythonic way. This includes utilizing Python’s implementation of Async IO.
+
+Begin by installing discord.py with pip:
+
+```sh
+$ pip install -U discord.py
+```
+
+Now that you’ve installed discord.py, you’ll use it to create your first connection to Discord!
+
+
+**__Creating a Discord Connection__**
+
+The first step in implementing your bot user is to create a connection to Discord. With discord.py, you do this by creating an instance of Client:
+
+```py
+# bot.py
+import os
+
+from discord.ext import commands
+
+TOKEN = "Your Token"
+
+bot = commands.Bot(command_prefix='!')
+
+@bot.event
+async def on_ready():
+    print(f'{client.user} has connected to Discord!')
+
+bot.run(TOKEN)
+```
+
+A Client is an object that represents a connection to Discord. A Client handles events, tracks state, and generally interacts with Discord APIs.pourquoi

@@ -1,1 +1,10 @@
-Une string en C# est une chaine de caractères
+Représente le texte en tant que séquence d’unités de code UTF-16.
+```cs
+public sealed class String : ICloneable, IComparable, IComparable<string>, IConvertible, IEquatable<string>, System.Collections.Generic.IEnumerable<char>
+```
+Héritage **Object** -> String
+
+
+**__Remarques__**
+
+Une chaîne est une collection séquentielle de caractères utilisés pour représenter du texte. Un String objet est une collection séquentielle d’objets System.Char qui représentent une chaîne ; un System.Char objet correspond à une unité de code UTF-16. La valeur de l’objet String est le contenu de la collection séquentielle d’objets System.Char et cette valeur est immuable (autrement dit, elle est en lecture seule). Pour plus d’informations sur l’immuabilité des chaînes, consultez la section Immuabilité et classe StringBuilder . La taille maximale d’un String objet en mémoire est de 2 Go ou d’environ 1 milliard de caractères.
