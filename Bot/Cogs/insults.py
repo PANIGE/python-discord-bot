@@ -19,9 +19,9 @@ class Handler(commands.Cog):
         self._last_member = None
 
 
-    @commands.Cog.listener()
+    #@commands.Cog.listener()
     async def on_message(self, message):
-        if message.author.bot: return
+        if message.author.bot or message.content.startswith(Context.ConfigManager.Get("Discord", "prefix")): return
         s = Context.Bot.user.name.lower() in message.content.lower() or Context.Bot.user.mentioned_in(message)
         ev = Context.Predicter.Evaluate(message.content)
         if (ev > 0.56):
