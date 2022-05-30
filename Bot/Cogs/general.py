@@ -38,7 +38,6 @@ class General(commands.Cog):
 
     global _
     _ = lambda s: s
-    _ = lambda s: s
     ball = [
         _("As I see it, yes"),
         _("It is certain"),

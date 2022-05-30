@@ -17,6 +17,11 @@ class General(commands.Cog):
             await ctx.send('Hello {0.name}... This feels familiar.'.format(member))
         self._last_member = member  
 
+    @commands.command(hidden=True)
+    async def say(self, ctx, *, msg):
+        await ctx.message.delete()
+        await ctx.send(msg)
+
     @commands.command()
     async def foob(self, ctx, *, msg):
         """Says a fooby message"""

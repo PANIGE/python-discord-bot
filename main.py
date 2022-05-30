@@ -1,6 +1,7 @@
 import os
 from constants.exceptions import IgnoredException
 from helpers import console
+from helpers.deepLearnHelper import predicter
 from objects import Context
 from Bot import bot
 
@@ -46,6 +47,15 @@ if __name__ == "__main__":
         try:
             console.write("> Creating Bot... ", True)
             bot.Load()
+            console.writeSuccess()
+        except:
+            console.writeFailure()
+            console.writeColored("[!] Error while Loading discord Cogs", console.Colors.RED)
+            raise
+
+        try:
+            console.write("> Loading IA ", True)
+            Context.Predicter = predicter(os.path.join(os.getcwd(), ".data", "model.hdf5"))
             console.writeSuccess()
         except:
             console.writeFailure()
