@@ -15,6 +15,17 @@ class Helper(commands.Cog):
         self.pendings = {}
         self.bot = Context.Bot
 
+
+    @commands.command()
+    @commands.cooldown(1, 60, commands.BucketType.user)
+    async def contact(self, ctx, *, msg):
+        embed=discord.Embed(title=msg, color=0xff0000)
+        embed.set_author(name=ctx.message.author.name + "#" + ctx.message.author.discriminator, icon_url=ctx.message.author.avatar_url)
+        embed.set_footer(text=ctx.message.guild.name)
+        await ctx.message.guild.owner.send(embed=embed)
+
+        await ctx.send("Your message has been sent to the owner of this server")
+
     @commands.command()
     async def ask(self, ctx):
         """Allows to get some ressources from the bot"""
