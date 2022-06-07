@@ -36,7 +36,7 @@ class General(commands.Cog):
     """General commands."""
 
     global _
-    _ = lambda s: s
+    _ = lambda s: s #In case we need to translate it in further version (Hors projet)
     ball = [
         _("As I see it, yes"),
         _("It is certain"),

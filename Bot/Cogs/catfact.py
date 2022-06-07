@@ -5,9 +5,7 @@ import logging
 from discord.ext import commands
 from objects import Context
 
-__author__ = "tmerc"
-
-log = logging.getLogger("red.tmerc.catfact")
+__author__ = "tmerc" #Respect authors
 
 
 class CatFact(commands.Cog):
